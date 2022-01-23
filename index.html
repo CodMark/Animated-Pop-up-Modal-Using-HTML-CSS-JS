@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section>
+        <div class="profile">
+            <div class="profile-img">
+                <img src="./profile.jfif" alt="">
+            </div>
+            <span class="name">Nikhil Kumar</span>
+            <span class="profession">Web & Web Designer</span>
+            <div id="hireBtn" class="button">
+                <button>Subscribe</button>
+            </div>
+        </div>
+
+        <!-- popup box start -->
+        <div class="popup-outer">
+            <div class="popup-box">
+                <span class="close" id="close">&times;</span>
+                <div class="profile-text">
+                    <img src="./profile.jfif" alt="">
+                    <div class="text">
+                        <span class="name">Nikhil Kumar</span>
+                        <span class="profession">Web & Web Designer</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="text">Do you want to subscribe my youtube channel?</p>
+                    <div class="button">
+                        <button id="close" class="No">No</button>
+                        <button class="yes"><a href="https://www.youtube.com/c/CodMark4"
+                                target="_blank">Yes</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script>
+    const section = document.querySelector("section"),
+        hireBtn = section.querySelector("#hireBtn"),
+        closeBtn = section.querySelectorAll("#close")
+
+    hireBtn.addEventListener("click", () => {
+        section.classList.add("show");
+    });
+
+    closeBtn.forEach(cBtn => {
+        cBtn.addEventListener("click", () => {
+            section.classList.remove("show");
+        });
+    });
+</script>
+
+</html>
